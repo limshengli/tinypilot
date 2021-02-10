@@ -64,10 +64,17 @@ See ["TinyPilot: Build a KVM Over IP for Under $100"](https://mtlynch.io/tinypil
 You can install TinyPilot on a compatible Raspberry Pi in just two commands.
 
 ```bash
+# Make sure to use SSH Agent with private key (private key used to access internal GitLab) added to agent. Git clone will be used in the process of installing TinyPilot. 
+# Windows:
+# 1. Enable "OpenSSH Authentication Agent" service.
+# 2. Execute "ssh-agent" command in cmd.
+# 3. Execute "ssh-add <Path to Private Key>" command in cmd.
+# 4. Connect with SSH using "ssh -A user@machine" command in cmd. 
+
 curl \
   --silent \
   --show-error \
-  https://raw.githubusercontent.com/mtlynch/tinypilot/master/quick-install | \
+  https://git.dev.sql.com.my/shengli/tinypilot/raw/master/quick-install | \
     bash - && \
   sudo reboot
 ```
